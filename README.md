@@ -1,6 +1,6 @@
 # 2018-FullstackAcademy
 
-## Dependence
+## Dependences
 
 ### npm or yarn
 * Express
