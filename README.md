@@ -1,5 +1,7 @@
 # 2018-FullstackAcademy
 
+![alt text](https://github.com/brayansi/2018-FullstackAcademy/blob/master/public/img-futiba-club/logo.png)
+
 ## Dependences
 
 ### npm or yarn
