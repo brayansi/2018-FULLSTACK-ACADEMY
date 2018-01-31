@@ -1,6 +1,6 @@
 # 2018-FullstackAcademy
 
-!(https://github.com/brayansi/2018-FullstackAcademy/blob/master/public/img-futiba-club/logo2.png)
+![alt text](https://github.com/brayansi/2018-FullstackAcademy/blob/master/public/img-futiba-club/logo2.png)
 
 ## Dependences
 
