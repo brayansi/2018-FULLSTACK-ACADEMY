@@ -63,30 +63,24 @@
         <div class="container">
             <div class="row">
                 <form class="col" method="post">
-                    <p class="h5 text-center mb-4">Criar uma conta</p>
-                
-                    <div class="md-form">
-                        <i class="fa fa-user prefix grey-text"></i>
-                        <input type="text" id="orangeForm-name" name="name" class="form-control">
-                        <label for="orangeForm-name">Seu nome</label>
-                    </div>
+                    <p class="h5 text-center mb-4">Entrar</p>
                     <div class="md-form">
                         <i class="fa fa-envelope prefix grey-text"></i>
                         <input type="text" id="orangeForm-email" name="email" class="form-control">
-                        <label for="orangeForm-email">Seu e-mail</label>
-                        <% if(locals.error){ %>
-                            <p>E-mail já em uso </p>
-                        <% } %>
+                        <label for="orangeForm-email">E-mail</label>
                     </div>
                 
                     <div class="md-form">
                         <i class="fa fa-lock prefix grey-text"></i>
                         <input type="password" id="orangeForm-pass" name="passwd" class="form-control">
-                        <label for="orangeForm-pass">Sua senha</label>
+                        <label for="orangeForm-pass">Senha</label>
                     </div>
-                
+
+                    <% if(locals.error) {%>
+                        <p>Error Login</p>
+                    <% } %>
                     <div class="text-center">
-                        <button class="btn btn-deep-orange">Criar conta</button>
+                        <button class="btn btn-deep-orange">Entrar</button>
                     </div>
                 </form>
             </div>
