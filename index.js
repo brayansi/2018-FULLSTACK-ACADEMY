@@ -6,6 +6,7 @@ const boryParser = require('body-parser')
 
 const account = require('./account')
 const admin = require('./admin')
+const groups = require('./groups')
 
 app.use(express.static('public'))
 app.use(boryParser.urlencoded({ extended: true }))
@@ -36,6 +37,8 @@ const init = async () => {
 
     app.use(account(connection)) //inject depedence for account
     app.use('/admin', admin(connection))
+    app.use('/groups', groups(connection))
+
 
     app.listen(3000, err => {
         console.log('Fubatiba Club server is running...');
