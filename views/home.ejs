@@ -22,7 +22,7 @@
         <!--Navbar-->
         <nav class="navbar-home navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="/img-futiba-club/logo.png" height="30" alt="Futiba Club">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
@@ -30,30 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Grupos</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                                <a class="nav-link" href="#">Classificação</a>
-                            </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                            Entrar
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
-                    
+                    <% include elements/menu-items %>                   
                 </div>
             </div>
         </nav>
@@ -71,7 +48,9 @@
                                 <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Quem consegue acertar mais jogos da Copa e do Brasileirão?
                                 </h6>
                                 <br>
-                                <a class="btn btn-white dark-grey-text font-bold wow fadeInLeft" data-wow-delay="0.3s">Criar conta</a>
+                                <% if(!user) {%>
+                                <a class="btn btn-white dark-grey-text font-bold wow fadeInLeft" href="/new-account" data-wow-delay="0.3s">Criar conta</a>
+                                <% } %>
                                 <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Ver classificação</a>
                                 
                             </div>

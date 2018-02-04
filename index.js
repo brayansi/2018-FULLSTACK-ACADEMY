@@ -5,6 +5,7 @@ const app = express()
 const boryParser = require('body-parser')
 
 const account = require('./account')
+const admin = require('./admin')
 
 app.use(express.static('public'))
 app.use(boryParser.urlencoded({ extended: true }))
@@ -24,7 +25,17 @@ const init = async () => {
         database: 'futibaclub'
     })
 
+    app.use((req, res, next) =>{
+        if(req.session.user){
+            res.locals.user = req.session.user
+        } else {
+            res.locals.user = false
+        }
+        next()
+    })
+
     app.use(account(connection)) //inject depedence for account
+    app.use('/admin', admin(connection))
 
     app.listen(3000, err => {
         console.log('Fubatiba Club server is running...');

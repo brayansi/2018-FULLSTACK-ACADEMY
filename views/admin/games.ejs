@@ -30,7 +30,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                <% include elements/menu-items %>                   
+                    <% include ../elements/menu-items %>
                 </div>
             </div>
         </nav>
@@ -39,43 +39,54 @@
     <section class="content">
         <div class="container">
             <div class="row">
-                <form class="col" method="post">
-                    <p class="h5 text-center mb-4">Criar uma conta</p>
-                
-                    <div class="md-form">
-                        <i class="fa fa-user prefix grey-text"></i>
-                        <input type="text" id="orangeForm-name" name="name" class="form-control">
-                        <label for="orangeForm-name">Seu nome</label>
-                    </div>
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix grey-text"></i>
-                        <input type="text" id="orangeForm-email" name="email" class="form-control">
-                        <label for="orangeForm-email">Seu e-mail</label>
-                        <% if(locals.error){ %>
-                            <p>E-mail já em uso </p>
-                        <% } %>
-                    </div>
-                
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix grey-text"></i>
-                        <input type="password" id="orangeForm-pass" name="passwd" class="form-control">
-                        <label for="orangeForm-pass">Sua senha</label>
-                    </div>
-                
-                    <div class="text-center">
-                        <button class="btn btn-deep-orange">Criar conta</button>
-                    </div>
-                </form>
+                <h2>Game management</h2>
             </div>
+            <form class="row" method="post">
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" class="form-control" name="team_a">
+                    <label for="orangeForm-name">Team A</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" class="form-control" name="team_b">
+                    <label for="orangeForm-name">Team B</label>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-deep-orange">Create Game</button>
+                </div>
+            </form>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Games</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% games.forEach(game => { %>
+                        <tr>
+                            <th scope="row"><%= game.id%></th>
+                            <td><%= game.team_a %> vs <%= game.team_b %></td>
+                            <td>
+                                <a href="/admin/games/delete/<%= game.id %>">Delete</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
         </div>
     </section>
-    
 
-    
+
+
     <footer class="page-footer center-on-small-only">
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2018 Projeto desenvolvido durante o Fullstack Academy - <a href="https://www.devpleno.com">DevPleno</a>
+                © 2018 Projeto desenvolvido durante o Fullstack Academy -
+                <a href="https://www.devpleno.com">DevPleno</a>
             </div>
         </div>
     </footer>
